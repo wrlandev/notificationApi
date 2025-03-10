@@ -3,7 +3,6 @@ package com.wdev.agendamento_notificacao_api.controller;
 import com.wdev.agendamento_notificacao_api.controller.dto.AgendamentoRecord;
 import com.wdev.agendamento_notificacao_api.controller.dto.AgendamentoRecordOut;
 import com.wdev.agendamento_notificacao_api.services.AgendamentoService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +24,12 @@ public class AgendamentoController {
     @GetMapping("/{id}")
     public ResponseEntity<AgendamentoRecordOut> buscarAgendamentoPorId(@PathVariable("id") Long id){
         return ResponseEntity.ok(agendamentoService.buscarAgendamentosPorId(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> cancelarAgendamento(@PathVariable("id") Long id){
+        agendamentoService.cancelarAgendamento(id);
+        return ResponseEntity.accepted().build();
     }
 
 }

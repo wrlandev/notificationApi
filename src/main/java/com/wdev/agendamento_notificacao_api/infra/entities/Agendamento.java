@@ -24,36 +24,68 @@ public class Agendamento {
     private String mensagem;
     private StatusNotificacaoEnum statusNotificacao;
 
-    public Long getId() {
-        return id;
+    public StatusNotificacaoEnum getStatusNotificacao() {
+        return statusNotificacao;
     }
 
-    public String getEmailDestinatario() {
-        return EmailDestinatario;
-    }
-
-    public String getTelefoneDestinatario() {
-        return telefoneDestinatario;
-    }
-
-    public LocalDateTime getDataHoraEnvio() {
-        return dataHoraEnvio;
-    }
-
-    public LocalDateTime getDataHoraAgendamento() {
-        return dataHoraAgendamento;
-    }
-
-    public LocalDateTime getDataHoraModificacao() {
-        return dataHoraModificacao;
+    public void setStatusNotificacao(StatusNotificacaoEnum statusNotificacao) {
+        this.statusNotificacao = statusNotificacao;
     }
 
     public String getMensagem() {
         return mensagem;
     }
 
-    public StatusNotificacaoEnum getStatusNotificacao() {
-        return statusNotificacao;
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public LocalDateTime getDataHoraModificacao() {
+        return dataHoraModificacao;
+    }
+
+    public void setDataHoraModificacao(LocalDateTime dataHoraModificacao) {
+        this.dataHoraModificacao = dataHoraModificacao;
+    }
+
+    public LocalDateTime getDataHoraAgendamento() {
+        return dataHoraAgendamento;
+    }
+
+    public void setDataHoraAgendamento(LocalDateTime dataHoraAgendamento) {
+        this.dataHoraAgendamento = dataHoraAgendamento;
+    }
+
+    public LocalDateTime getDataHoraEnvio() {
+        return dataHoraEnvio;
+    }
+
+    public void setDataHoraEnvio(LocalDateTime dataHoraEnvio) {
+        this.dataHoraEnvio = dataHoraEnvio;
+    }
+
+    public String getTelefoneDestinatario() {
+        return telefoneDestinatario;
+    }
+
+    public void setTelefoneDestinatario(String telefoneDestinatario) {
+        this.telefoneDestinatario = telefoneDestinatario;
+    }
+
+    public String getEmailDestinatario() {
+        return EmailDestinatario;
+    }
+
+    public void setEmailDestinatario(String emailDestinatario) {
+        EmailDestinatario = emailDestinatario;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @PrePersist
