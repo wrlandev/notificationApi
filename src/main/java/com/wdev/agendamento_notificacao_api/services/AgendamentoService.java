@@ -1,5 +1,6 @@
 package com.wdev.agendamento_notificacao_api.services;
 
+import com.wdev.agendamento_notificacao_api.Exception.NotFoundException;
 import com.wdev.agendamento_notificacao_api.controller.dto.AgendamentoRecord;
 import com.wdev.agendamento_notificacao_api.controller.dto.AgendamentoRecordOut;
 import com.wdev.agendamento_notificacao_api.infra.repositories.AgendamentoRepository;
@@ -21,6 +22,11 @@ public class AgendamentoService {
         return agendamentoMapper.paraOut(
                 repository.save(
                         agendamentoMapper.paraEntity(agendamento)));
+    }
+
+    public AgendamentoRecordOut buscarAgendamentosPorId(Long id){
+        return agendamentoMapper.paraOut(repository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Id não encontrador")));
     }
 
 }
